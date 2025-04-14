@@ -1,2 +1,3 @@
-# AgriSense-website
-A crop-fertilizer recommendation website.
+# AgriSense
+
+A HTML, CSS, JavaScript project.
