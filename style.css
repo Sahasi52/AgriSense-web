@@ -132,6 +132,7 @@ header {
   backdrop-filter: blur(20px);
   border-radius: 10px;
   font-weight: 500;
+  transition: 0.3s;
 }
 .hero div button:hover {
   transform: scale(1.1);
@@ -140,6 +141,7 @@ header {
 }
 .hero div .btnCrop-popup.active,
 .hero div .btnFertilizer-popup.active {
+  transform: scale(1.1);
   background: rgba(255, 255, 255, 0.5);
 }
 .hero h4 {
