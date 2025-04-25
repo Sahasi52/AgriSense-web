@@ -1,3 +1,3 @@
-# Crop & Fertilizer Recommendation System
+# Crop-Fertilizer-Recommendation-System
 
 A HTML, CSS, JavaScript project.
