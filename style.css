@@ -83,10 +83,15 @@ header {
   color: black;
   font-weight: 500;
   margin-left: 40px;
-  transition: 0.5s;
+  transition: 0.3s;
 }
 .navigation .btnLogin-popup:hover {
   background: limegreen;
+  color: white;
+  border: 2px solid limegreen;
+}
+.navigation .btnLogin-popup.active {
+  background: lch(72.61% 91 137.53);
   color: white;
   border: 2px solid limegreen;
 }
@@ -126,10 +131,12 @@ header {
   cursor: pointer;
   backdrop-filter: blur(20px);
   border-radius: 10px;
+  font-weight: 500;
 }
 .hero div button:hover {
   transform: scale(1.1);
-  transition: 0.5s;
+  transition: 0.3s;
+  background: rgba(255, 255, 255, 0.5);
 }
 .hero h4 {
   font-size: 1.2rem;
@@ -138,7 +145,7 @@ header {
 }
 .wrapper {
   margin-top: 13vh;
-  position: relative;
+  position: fixed;
   width: 400px;
   height: 440px;
   background: hsl(120, 61%, 50%, 0.5);
@@ -152,12 +159,32 @@ header {
   overflow: hidden;
   transform: scale(0);
   transition: transform 0.5s ease, height 0.2s ease;
+  z-index: 1000;
 }
 .wrapper.active-popup {
   transform: scale(1);
 }
 .wrapper.active {
   height: 520px;
+}
+.wrapper .iconClose {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 45px;
+  height: 45px;
+  background: black;
+  font-size: 2rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom-left-radius: 20px;
+  cursor: pointer;
+  z-index: 1;
+}
+.wrapper .iconClose:hover {
+  color: limegreen;
 }
 .wrapper .formBox {
   width: 100%;
@@ -180,50 +207,26 @@ header {
   transition: transform 0.18s ease;
   transform: translateX(0);
 }
-.wrapper .iconClose {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 45px;
-  height: 45px;
-  background: black;
-  font-size: 2rem;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-bottom-left-radius: 20px;
-  cursor: pointer;
-  z-index: 1;
-}
-.formBox h2 {
+.wrapper .formBox h2 {
   font-size: 2rem;
   color: black;
   text-align: center;
 }
-.inputBox {
+.wrapper .formBox .inputBox {
   position: relative;
   width: 100%;
   height: 50px;
   border-bottom: 2px solid black;
   margin: 30px 0;
 }
-.inputBox label {
+.wrapper .formBox .inputBox .icon {
   position: absolute;
-  top: 50%;
-  left: 5px;
-  transform: translateY(-50%);
-  font-size: 1rem;
+  right: 8px;
+  font-size: 1.2rem;
   color: black;
-  font-weight: 500;
-  pointer-events: none;
-  transition: 0.5s;
+  line-height: 57px;
 }
-.inputBox input:focus ~ label,
-.inputBox input:valid ~ label {
-  top: -5px;
-}
-.inputBox input {
+.wrapper .formBox .inputBox input {
   width: 100%;
   height: 100%;
   background: transparent;
@@ -234,14 +237,22 @@ header {
   font-weight: 600;
   padding: 0 35px 0 5px;
 }
-.inputBox .icon {
+.wrapper .formBox .inputBox label {
   position: absolute;
-  right: 8px;
-  font-size: 1.2rem;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  font-size: 1rem;
   color: black;
-  line-height: 57px;
+  font-weight: 500;
+  pointer-events: none;
+  transition: 0.5s;
 }
-.remember-forgot {
+.wrapper .formBox .inputBox input:focus ~ label,
+.wrapper .formBox .inputBox input:valid ~ label {
+  top: -5px;
+}
+.wrapper .formBox .remember-forgot {
   font-size: 0.9rem;
   color: black;
   font-weight: 500;
@@ -249,19 +260,19 @@ header {
   display: flex;
   justify-content: space-between;
 }
-.remember-forgot label input {
+.wrapper .formBox .remember-forgot label input {
   accent-color: black;
   margin-right: 3px;
 }
-.remember-forgot a {
+.wrapper .formBox .remember-forgot a {
   color: black;
   text-decoration: none;
 }
-.remember-forgot a:hover {
+.wrapper .formBox .remember-forgot a:hover {
   text-decoration: underline;
 }
-.loginBtn,
-.registerBtn {
+.wrapper .formBox .loginBtn,
+.wrapper .formBox .registerBtn {
   width: 100%;
   height: 45px;
   background: black;
@@ -274,62 +285,157 @@ header {
   font-weight: 500;
   transition: 0.3s;
 }
-.loginBtn:hover,
-.registerBtn:hover {
+.wrapper .formBox .loginBtn:hover,
+.wrapper .formBox .registerBtn:hover {
   color: limegreen;
 }
-.login-register {
+.wrapper .formBox .login-register {
   font-size: 0.9rem;
   color: black;
   text-align: center;
   font-weight: 500;
   margin: 25px 0 10px;
 }
-.login-register p a {
+.wrapper .formBox .login-register p a {
   color: black;
   text-decoration: none;
   font-weight: 600;
 }
-.login-register p a:hover {
+.wrapper .formBox .login-register p a:hover {
   text-decoration: underline;
 }
-
-/* Crop Recommend Page */
-
-.cropRecommend {
-  position: absolute;
-  margin-top: 14vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.cover {
+  margin-top: 13vh;
+  position: relative;
   width: 800px;
-  height: 440px;
+  height: 520px;
   background: hsl(120, 61%, 50%, 0.5);
   border: 2px solid rgba(255, 255, 255, 0.5);
   border-radius: 20px;
   backdrop-filter: blur(20px);
   box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.5);
-  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transform: scale(0);
+  transition: transform 0.5s ease, height 0.2s ease;
+}
+.cover.active-popup {
+  transform: scale(1);
+}
+.cover.active {
+  width: 720px;
+  height: 440px;
 }
 
-/* Fertilizer Guide Page */
-
-.fertilizerGuide {
+.cover .iconBack {
   position: absolute;
-  margin-top: 14vh;
+  top: 0;
+  left: 0;
+  width: 45px;
+  height: 45px;
+  background: black;
+  font-size: 2rem;
+  color: white;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 800px;
-  height: 440px;
-  background: hsl(120, 61%, 50%, 0.5);
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  border-radius: 20px;
-  backdrop-filter: blur(20px);
-  box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.5);
-  padding: 40px;
+  border-bottom-right-radius: 20px;
+  cursor: pointer;
+  z-index: 1;
+}
+.cover .iconBack:hover {
+  color: limegreen;
+}
+.cover .formBox {
+  width: 100%;
+  padding: 80px;
+}
+.cover .formBox.crop {
+  transition: transform 0.18s ease;
+  transform: translateX(0);
+}
+.cover.active .formBox.crop {
+  transition: none;
+  transform: translateX(-800px);
+}
+.cover .formBox.fertilizer {
+  position: absolute;
+  transition: none;
+  transform: translateX(800px);
+}
+.cover.active .formBox.fertilizer {
+  transition: transform 0.18s ease;
+  transform: translateX(0);
+}
+.cover .formBox h2 {
+  font-size: 2rem;
+  color: black;
+  text-align: center;
+}
+.cover .formBox .inputBox {
+  position: relative;
+  width: 100%;
+  height: 35px;
+  border-bottom: 2px solid black;
+  margin: 25px 0;
+}
+.cover.active .formBox .inputBox {
+  height: 50px;
+  margin: 30px 0;
+}
+.cover .formBox .inputBox input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  color: black;
+  font-weight: 600;
+  padding: 0 35px 0 5px;
+}
+/* For Chrome, Safari, Edge, Opera */
+.no-spinner::-webkit-outer-spin-button,
+.no-spinner::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* For Firefox */
+.no-spinner {
+  -moz-appearance: textfield;
+}
+.cover .formBox .inputBox label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  color: black;
+  font-weight: 500;
+  pointer-events: none;
+  transition: 0.5s;
+}
+.cover .formBox .inputBox input:focus ~ label,
+.cover .formBox .inputBox input:valid ~ label {
+  top: -5px;
+}
+.cover .formBox .recommendationBtn {
+  width: 100%;
+  height: 45px;
+  background: black;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  color: white;
+  font-weight: 500;
+  transition: 0.3s;
+}
+.cover .formBox .recommendationBtn:hover {
+  color: limegreen;
 }
 
 /* About Page */
@@ -374,8 +480,8 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 400px;
-  height: 420px;
+  width: 720px;
+  height: 440px;
   background: hsl(120, 61%, 50%, 0.5);
   border: 2px solid rgba(255, 255, 255, 0.5);
   border-radius: 20px;
