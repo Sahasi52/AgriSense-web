@@ -57,11 +57,15 @@ function displayError(message) {
 btnCrop_popup.addEventListener("click", () => {
   cover.classList.remove("active");
   cover.classList.add("active-popup");
+  btnCrop_popup.classList.add("active");
 });
 btnFertilizer_popup.addEventListener("click", () => {
   cover.classList.add("active");
   cover.classList.add("active-popup");
+  btnFertilizer_popup.classList.add("active");
 });
 iconBack.addEventListener("click", () => {
   cover.classList.remove("active-popup");
+  btnCrop_popup.classList.remove("active");
+  btnFertilizer_popup.classList.remove("active");
 });
