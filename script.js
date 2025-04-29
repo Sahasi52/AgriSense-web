@@ -1,4 +1,7 @@
+const navigation = document.querySelector(".navigation");
 const btn_popup = document.querySelector(".btn-popup");
+const bar = document.querySelector(".bar");
+const closeBar = document.querySelector(".close");
 const btnCrop_popup = document.querySelector(".btnCrop-popup");
 const btnFertilizer_popup = document.querySelector(".btnFertilizer-popup");
 const wrapper = document.querySelector(".wrapper");
@@ -28,6 +31,14 @@ btn_popup.addEventListener("click", () => {
     btn_popup.classList.add("active");
   }
 });
+bar.addEventListener("click", () => {
+  navigation.classList.add("active");
+  bar.style.display = "none";
+});
+closeBar.addEventListener("click", () => {
+  navigation.classList.remove("active");
+  bar.style.display = "flex";
+});
 iconClose.addEventListener("click", () => {
   wrapper.classList.remove("active-popup");
   btn_popup.classList.remove("active");
@@ -36,11 +47,16 @@ forgotPassword.addEventListener("click", () => {
   displayError("Click here to reset it.");
 });
 loginBtn.addEventListener("click", () => {
+  const emailFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (loginEmail.value === "" || loginPassword.value === "") {
     displayError("Please enter your login details.");
+  } else if (!emailFormat.test(loginEmail.value)) {
+    displayError("Please enter a valid email address.");
   } else if (
-    loginEmail.value === registerEmail.value &&
-    loginPassword.value === registerPassword.value
+    (loginEmail.value === registerEmail.value &&
+      loginPassword.value === registerPassword.value) ||
+    (loginEmail.value === "example@gmail.com" &&
+      loginPassword.value === "example1234")
   ) {
     wrapper.classList.remove("active-popup");
     btn_popup.classList.remove("active");
@@ -53,20 +69,17 @@ registerLink.addEventListener("click", () => {
   wrapper.classList.add("active");
 });
 registerBtn.addEventListener("click", () => {
+  const emailFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (
     registerUsername.value === "" ||
     registerEmail.value === "" ||
     registerPassword.value === ""
   ) {
     displayError("Please enter your registration details.");
-  } else if (
-    registerUsername.value === "example" &&
-    registerEmail.value === "example@gmail.com" &&
-    registerPassword.value === "example1234"
-  ) {
-    wrapper.classList.remove("active");
+  } else if (!emailFormat.test(registerEmail.value)) {
+    displayError("Please enter a valid email address.");
   } else {
-    displayError("Please enter your valid registration details.");
+    wrapper.classList.remove("active");
   }
 });
 loginLink.addEventListener("click", () => {
