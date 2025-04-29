@@ -98,9 +98,16 @@ header {
   border: 2px solid limegreen;
 }
 .navigation .btn-popup.active {
-  background: lch(72.61% 91 137.53);
+  background: limegreen;
   color: white;
   border: 2px solid limegreen;
+}
+.mobile {
+  display: none;
+  align-items: center;
+}
+.close {
+  display: none;
 }
 .hero {
   position: absolute;
@@ -140,6 +147,7 @@ header {
   border-radius: 10px;
   font-weight: 500;
   transition: 0.3s;
+  font-size: 1rem;
 }
 .hero div button:hover {
   transform: scale(1.1);
@@ -478,13 +486,11 @@ header {
   font-weight: 600;
   padding: 0 35px 0 5px;
 }
-/* For Chrome, Safari, Edge, Opera */
 .no-spinner::-webkit-outer-spin-button,
 .no-spinner::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-/* For Firefox */
 .no-spinner {
   -moz-appearance: textfield;
 }
@@ -538,9 +544,8 @@ header {
   box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.5);
   padding: 40px;
 }
-.about h1 {
-  padding-left: 40%;
-  font-size: 2.87rem;
+.about h2 {
+  font-size: 2rem;
   line-height: 54px;
   color: black;
 }
@@ -548,6 +553,9 @@ header {
   font-size: 1rem;
   margin: 0;
   color: black;
+}
+.about abbr {
+  font-size: 1rem;
 }
 .about marquee {
   background-color: white;
@@ -595,4 +603,245 @@ header {
   color: black;
   margin: 0;
   font-size: 0.87rem;
+}
+
+/* Start Media Query */
+
+@media (max-width: 799px) {
+  /* Home page */
+
+  header {
+    justify-content: flex-start;
+    padding: 10px 100px;
+  }
+  .logo {
+    height: 70px;
+    width: 110px;
+  }
+  .navigation {
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed;
+    top: 0;
+    right: -300px;
+    height: 100vh;
+    width: 300px;
+    background: hsl(0, 0%, 100%, 0.5);
+    backdrop-filter: blur(20px);
+    padding: 0 0 650px;
+  }
+  .navigation.active {
+    right: 0px;
+  }
+  .navigation a {
+    font-size: 1.3rem;
+    padding: 0 0 20px;
+  }
+  .navigation a::after {
+    bottom: 22px;
+  }
+  .navigation .btn-popup {
+    width: 0;
+    height: 0;
+    border: none;
+    font-size: 1.3rem;
+  }
+  .navigation .btn-popup:hover,
+  .navigation .btn-popup.active {
+    color: limegreen;
+    border: none;
+    text-decoration: underline 3px solid limegreen;
+  }
+  .close {
+    display: initial;
+    position: absolute;
+    top: 32px;
+    left: 30px;
+    color: black;
+    font-size: 24px;
+  }
+  .mobile {
+    display: flex;
+    align-items: center;
+  }
+  .mobile span {
+    color: #000;
+    font-size: 1.7rem;
+    margin-left: 400px;
+  }
+  .hero {
+    margin-top: 0;
+    padding: 0px 80px;
+  }
+  .hero h1 {
+    font-size: 3.4rem;
+  }
+  .hero p {
+    font-size: 1.2rem;
+  }
+  .hero h4 {
+    font-size: 1.6rem;
+  }
+  .wrapper {
+    margin-top: 0;
+  }
+  .wrap {
+    margin-top: 0;
+  }
+  .cover {
+    margin-top: 0;
+    width: 720px;
+  }
+
+  /* About Page */
+
+  .about {
+    margin-top: 0;
+    width: 720px;
+    padding: 40px;
+  }
+  .about h2 {
+    font-size: 2rem;
+    line-height: 24px;
+  }
+  .about p {
+    font-size: 1rem;
+  }
+  .about abbr {
+    font-size: 1rem;
+  }
+  .about marquee {
+    font-size: 1rem;
+  }
+  /* Contact Page */
+
+  .contact {
+    margin-top: 0;
+    width: 720px;
+  }
+  .contact h6 {
+    font-size: 1rem;
+  }
+  .contact h3 {
+    font-size: 2rem;
+  }
+  .contact li span {
+    font-size: 1rem;
+  }
+  .contact li p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 477px) {
+  /* Home page */
+
+  header {
+    justify-content: flex-start;
+    padding: 5px 50px;
+  }
+  .navigation {
+    width: 210px;
+    padding: 0 0 550px;
+  }
+  .navigation a {
+    font-size: 1rem;
+  }
+  .navigation .btn-popup {
+    font-size: 1rem;
+  }
+  .close {
+    top: 24px;
+  }
+  .mobile span {
+    margin-left: 170px;
+  }
+  .hero {
+    margin-top: 0;
+    padding: 0px 60px;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero p {
+    font-size: 0.8rem;
+  }
+  .hero div {
+    flex-direction: column;
+  }
+  .hero div button {
+    padding: 35px 50px;
+    margin: 35px;
+    font-size: 1rem;
+  }
+  .hero h4 {
+    font-size: 1rem;
+    color: white;
+    align-self: center;
+  }
+  .wrapper {
+    margin-top: 0;
+    width: 370px;
+  }
+  .wrap {
+    margin-top: 0;
+    width: 370px;
+  }
+  .wrap .formBox h2 {
+    font-size: 1.5rem;
+    color: black;
+    text-align: center;
+    margin: 0 0 25px;
+  }
+  .cover {
+    margin-top: 0;
+    width: 370px;
+    height: 520px;
+  }
+  .cover.active {
+    width: 370px;
+  }
+  .cover .formBox {
+    padding: 40px;
+  }
+  .cover .formBox h2 {
+    font-size: 1.5rem;
+  }
+  .cover .formBox .inputBox {
+    margin: 20px 0;
+  }
+
+  /* About Page */
+
+  .about {
+    margin-top: 0;
+    width: 370px;
+    height: 520px;
+    padding: 40px;
+  }
+  .about h2 {
+    font-size: 1.5rem;
+    line-height: 24px;
+    color: black;
+  }
+  .about p {
+    font-size: 0.8rem;
+  }
+  .about abbr {
+    font-size: 0.8rem;
+  }
+  .about marquee {
+    font-size: 0.8rem;
+  }
+
+  /* Contact Page */
+
+  .contact {
+    margin-top: 0;
+    width: 370px;
+    height: 440px;
+  }
+  .contact h3 {
+    font-size: 1.3rem;
+  }
 }
