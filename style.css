@@ -148,6 +148,7 @@ header {
   font-weight: 500;
   transition: 0.3s;
   font-size: 1rem;
+  color: black;
 }
 .hero div button:hover {
   transform: scale(1.1);
@@ -772,7 +773,6 @@ header {
   .hero div button {
     padding: 35px 50px;
     margin: 35px;
-    font-size: 1rem;
   }
   .hero h4 {
     font-size: 1rem;
