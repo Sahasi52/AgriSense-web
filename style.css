@@ -629,7 +629,7 @@ header {
     width: 300px;
     background: hsl(0, 0%, 100%, 0.5);
     backdrop-filter: blur(20px);
-    padding: 0 0 500px;
+    padding: 0 0 450px;
   }
   .navigation.active {
     right: 0px;
@@ -747,7 +747,7 @@ header {
   }
   .navigation {
     width: 210px;
-    padding: 0 0 500px;
+    padding: 0 0 450px;
   }
   .navigation a {
     font-size: 1rem;
