@@ -661,14 +661,20 @@ header {
     color: black;
     font-size: 24px;
   }
+  .close:hover {
+    color: limegreen;
+  }
   .mobile {
     display: flex;
     align-items: center;
   }
   .mobile span {
-    color: #000;
+    color: black;
     font-size: 1.7rem;
     margin-left: 400px;
+  }
+  .mobile span:hover {
+    color: limegreen;
   }
   .hero {
     margin-top: 0;
