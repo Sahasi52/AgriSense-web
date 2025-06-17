@@ -28,10 +28,17 @@ A responsive **HTML, CSS, JavaScript** based web demo for recommending crops and
 
 Crop-Fertilizer-Recommendation-System-web/
 │
+
 ├── about.html # Webpage (includes login, register, logout modals)
+
 ├── contact.html # Webpage (includes login, register, logout modals)
+
 ├── image.jpg # Site image (used in background)
-├── index.html # Webpage (includes login, register, logout modals, and crop recommemdation, fertilizer recommendation modals)
+
+├── index.html # Webpage (includes login, register, logout modals, and crop recommendation, fertilizer recommendation modals)
+
 ├── logo.jpeg # Site logo (used in header, favicon)
+
 ├── script.js # JavaScript logic (form handling, toggles)
+
 └── style.css # CSS styling (responsive + animations)
