@@ -27,6 +27,7 @@ A responsive **HTML, CSS, JavaScript** based web demo for recommending crops and
 ## 📁 File Structure
 
 Crop-Fertilizer-Recommendation-System-web/
+
 │
 
 ├── about.html # Webpage (includes login, register, logout modals)
