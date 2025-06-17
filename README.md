@@ -2,7 +2,7 @@
 
 A responsive **HTML, CSS, JavaScript** based web demo for recommending crops and fertilizers. The project simulates a modern agricultural web interface with login/logout functionality, form validation, and a sleek user interface.
 
-![Logo](./logo.jpg)
+![Logo](./logo.jpeg)
 
 ---
 
