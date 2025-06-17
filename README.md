@@ -1,4 +1,4 @@
-# 🌾 Crop & Fertilizer Recommendation System (Web Demo)
+# 🌾 Crop-Fertilizer-Recommendation-System-web-demo
 
 A responsive **HTML, CSS, JavaScript** based web demo for recommending crops and fertilizers. The project simulates a modern agricultural web interface with login/logout functionality, form validation, and a sleek user interface.
 
