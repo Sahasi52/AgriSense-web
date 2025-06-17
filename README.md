@@ -6,11 +6,11 @@ A responsive **HTML, CSS, JavaScript** based web demo for recommending crops and
 
 ## ✨ Features
 
-- 🔍 **Searchable Interface** – Includes UI for selecting crop or fertilizer recommendation.
-- 🔐 **Login & Register Forms** – Simulated authentication system with form validation.
-- 🌿 **Modern UI/UX** – Styled using custom CSS with responsiveness and animations.
-- 📱 **Mobile-Friendly** – Includes media queries for full responsiveness across devices.
-- 🎨 **Custom Look** – Styled with a clean green agricultural theme and glassmorphism effects.
+- **Searchable Interface** – Includes UI for selecting crop or fertilizer recommendation.
+- **Login & Register Forms** – Simulated authentication system with form validation.
+- **Modern UI/UX** – Styled using custom CSS with responsiveness and animations.
+- **Mobile-Friendly** – Includes media queries for full responsiveness across devices.
+- **Custom Look** – Styled with a clean green agricultural theme and glassmorphism effects.
 
 ---
 
